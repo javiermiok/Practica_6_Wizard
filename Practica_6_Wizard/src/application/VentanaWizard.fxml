@@ -2,32 +2,69 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="480.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane prefHeight="500.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controlador">
    <children>
-      <AnchorPane fx:id="pane1" prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: #0F4BA8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="pane1" prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: #FF220A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="184.0" layoutY="57.0" text="Paso 1:" textFill="WHITE">
+            <Label layoutX="106.0" layoutY="86.0" text="Paso 1: Descarga" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
+            <Label layoutX="95.0" layoutY="147.0" text="Presiona el botón de la flecha derecha para continuar" textFill="WHITE" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="186.0" layoutY="200.0">
+               <image>
+                  <Image url="@descarga.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="413.0" prefHeight="30.0" prefWidth="200.0" text="1/3" textFill="WHITE" AnchorPane.bottomAnchor="60.0">
+      <AnchorPane fx:id="pane2" prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: FF6B0A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="70.0" layoutY="86.0" text="Paso 2: Configuración" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="95.0" layoutY="139.0" prefHeight="51.0" prefWidth="283.0" text="Presiona el botón de la flecha derecha para continuar o presiona el botón de la flecha izquierda para volver al paso anterior" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="192.0" layoutY="234.0">
+               <image>
+                  <Image url="@settings.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane3" layoutY="-1.0" prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: #169908;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="106.0" layoutY="86.0" text="Paso 3: Ejecución" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="95.0" layoutY="139.0" prefHeight="51.0" prefWidth="283.0" text="Presiona el botón de la flecha izquierda para volver al paso anterior" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="192.0" layoutY="234.0">
+               <image>
+                  <Image url="@execute.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="countLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="413.0" prefHeight="30.0" prefWidth="200.0" text="1/3" textFill="WHITE" AnchorPane.bottomAnchor="60.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXButton layoutX="58.0" layoutY="403.0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #1771FF; -fx-background-radius: 50px;" text="&lt;" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="75.0">
+      <JFXButton layoutX="58.0" layoutY="403.0" onAction="#backAction" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #00000030; -fx-background-radius: 50px;" text="&lt;" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="75.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="379.0" layoutY="403.0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #1771FF; -fx-background-radius: 50px;" text="&gt;" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="75.0">
+      <JFXButton layoutX="379.0" layoutY="403.0" onAction="#nextAction" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #00000030; -fx-background-radius: 50px;" text="&gt;" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="75.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
